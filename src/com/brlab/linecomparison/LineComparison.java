@@ -1,10 +1,26 @@
 package com.brlab.linecomparison;
 
 class Point {
-    int x, y;
+    private int x, y;
     // constructor
     public Point(int x, int y) {
         this.x = x;
+        this.y = y;
+    }
+    // geeter and setter methods for lines
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
         this.y = y;
     }
 }
@@ -19,7 +35,7 @@ class Line  implements Comparable<Line> {
 
     // Line = sqrt( (x2 - x1) ^ 2 + (y2- y1) ^ 2)
     public double calculateLength() {
-        return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+        return Math.sqrt(Math.pow(p2.getX() - p1.getX(), 2) + Math.pow(p2.getY() - p1.getY(), 2));
     }
 
     @Override
