@@ -9,7 +9,7 @@ class Point {
     }
 }
 
-class Line {
+class Line  implements Comparable<Line> {
     Point p1, p2;
 
     public Line(Point p1, Point p2) {
@@ -27,6 +27,11 @@ class Line {
         if (!(obj instanceof Line)) return false;
         Line other = (Line) obj;
         return Double.compare(this.calculateLength(), other.calculateLength()) == 0;
+    }
+
+    @Override
+    public int compareTo(Line line) {
+        return Double.compare(this.calculateLength(), line.calculateLength());
     }
 }
 
