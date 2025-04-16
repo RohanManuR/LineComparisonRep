@@ -21,6 +21,13 @@ class Line {
     public double calculateLength() {
         return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Line)) return false;
+        Line other = (Line) obj;
+        return Double.compare(this.calculateLength(), other.calculateLength()) == 0;
+    }
 }
 
 public class LineComparison {
@@ -31,5 +38,6 @@ public class LineComparison {
         Line line1 = new Line(point1,point2);
         Line line2 = new Line(point1,point2);
         System.out.println(line1.calculateLength());
+        System.out.println(line1.equals(line2));
     }
 }
